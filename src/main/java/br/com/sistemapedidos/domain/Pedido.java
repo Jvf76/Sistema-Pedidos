@@ -7,7 +7,12 @@ public class Pedido {
     private ArrayList<Produto> produtos = new ArrayList<>();
     private double valorTotal;
     private Cliente cliente;
+    private Endereco endereco;
 
+    public Pedido(Cliente cliente, Endereco endereco) {
+        this.cliente = cliente;
+        this.endereco = endereco;
+    }
 
     public void imprime(){
 
@@ -19,14 +24,14 @@ public class Pedido {
             System.out.print(produto.getNome()+", ");
         }
         System.out.println("\nValor total do pedido: " + this.valorTotal);
+        System.out.println("Endereço para entrega: " + endereco.getRua());
+
     }
     public void adicionarProduto(Produto produto){
         produtos.add(produto);
         valorTotal += produto.getPreco();
     }
-    public Pedido(Cliente cliente) {
-        this.cliente = cliente;
-    }
+
 
     public int getId() {
         return id;
@@ -60,4 +65,6 @@ public class Pedido {
     public Cliente getCliente() {
         return cliente;
     }
+
+
 }

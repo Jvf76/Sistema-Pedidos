@@ -7,10 +7,11 @@ public class Cliente {
     private String cnpj;
     private Endereco endereco;
 
-    public Cliente(String nome, String cpf, String email) {
+    public Cliente(String nome, String cpf, String email, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+        this.endereco = endereco;
     }
 
 
