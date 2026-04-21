@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Endereco endereco = new Endereco("av getulio vargas",222, 38700233,"centro");
         Cliente cliente = new Cliente("joao","77777777", "joao@gmail.com", endereco);
-        Pedido pedido = new Pedido(cliente,endereco);
+        Pedido pedido = new Pedido(cliente);
 
         Produto produto1 = new Produto(1, "celular", 2000);
         Produto produto2 = new Produto (2,"mouse", 200);

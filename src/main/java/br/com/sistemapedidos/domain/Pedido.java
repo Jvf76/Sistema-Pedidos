@@ -9,9 +9,9 @@ public class Pedido {
     private Cliente cliente;
     private Endereco endereco;
 
-    public Pedido(Cliente cliente, Endereco endereco) {
+    public Pedido(Cliente cliente) {
         this.cliente = cliente;
-        this.endereco = endereco;
+
     }
 
     public void imprime(){
@@ -24,7 +24,7 @@ public class Pedido {
             System.out.print(produto.getNome()+", ");
         }
         System.out.println("\nValor total do pedido: " + this.valorTotal);
-        System.out.println("Endereço para entrega: " + endereco.getRua());
+        System.out.println("Endereço para entrega: " + cliente.getEndereco().getRua());
 
     }
     public void adicionarProduto(Produto produto){
