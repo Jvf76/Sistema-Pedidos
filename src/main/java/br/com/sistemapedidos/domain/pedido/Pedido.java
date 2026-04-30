@@ -1,5 +1,6 @@
 package br.com.sistemapedidos.domain.pedido;
 import br.com.sistemapedidos.domain.cliente.Cliente;
+import br.com.sistemapedidos.domain.entrega.FormaEntrega;
 import br.com.sistemapedidos.domain.pagamento.FormaPagamento;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ public class Pedido {
     private double valorTotal;
     private Cliente cliente;
     private FormaPagamento formaPagamento;
+    private FormaEntrega formaEntrega;
 
 
 
@@ -21,9 +23,8 @@ public class Pedido {
     public void imprime(){
         imprimeCliente();
         imprimeProduto();
-        System.out.println("\nValor total do pedido: " + this.valorTotal);
-        System.out.println("Endereço para entrega: " + cliente.getEndereco().getRua() + ", Numero: " + cliente.getEndereco().getNumero() + " Bairro: " + cliente.getEndereco().getBairro() + " CEP: " + cliente.getEndereco().getCep() );
         imprimePagamento();
+        imprimeEntrega();
     }
 
     public void imprimeCliente(){
@@ -40,11 +41,19 @@ public class Pedido {
     public void imprimePagamento(){
         double desconto = formaPagamento.calculaDesconto(valorTotal);
         double valorFinal = formaPagamento.calculaValorTotal(valorTotal);
+        System.out.println("\nValor total do pedido: " + this.valorTotal);
         if (desconto > 0) {
             System.out.println("Desconto aplicado" + desconto);
         }
         System.out.println("Valor total do pedido " + valorFinal);
     }
+
+    public void imprimeEntrega(){
+        String entrega = formaEntrega.entrega();
+        System.out.println("Endereço para entrega: " + cliente.getEndereco().getRua() + ", Numero: " + cliente.getEndereco().getNumero() + " Bairro: " + cliente.getEndereco().getBairro() + " CEP: " + cliente.getEndereco().getCep() );
+        System.out.println("Forma de Entrega: " + entrega );
+    }
+
     public void adicionarProduto(Produto produto){
         produtos.add(produto);
         valorTotal += produto.getPreco();
@@ -52,5 +61,13 @@ public class Pedido {
 
     public void setFormaPagamento(FormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
+    }
+
+    public void setFormaEntrega(FormaEntrega formaEntrega) {
+        this.formaEntrega = formaEntrega;
+    }
+
+    public FormaEntrega getFormaEntrega() {
+        return formaEntrega;
     }
 }

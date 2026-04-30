@@ -2,12 +2,16 @@ package br.com.sistemapedidos.aplication;
 
 import br.com.sistemapedidos.domain.cliente.Cliente;
 import br.com.sistemapedidos.domain.cliente.Endereco;
+import br.com.sistemapedidos.domain.entrega.FormaEntrega;
 import br.com.sistemapedidos.domain.pagamento.FormaPagamento;
 import br.com.sistemapedidos.domain.pagamento.PagamentoCredito;
 import br.com.sistemapedidos.domain.pagamento.PagamentoDebito;
 import br.com.sistemapedidos.domain.pagamento.PagamentoPix;
 import br.com.sistemapedidos.domain.pedido.Pedido;
 import br.com.sistemapedidos.domain.pedido.Produto;
+import br.com.sistemapedidos.domain.entrega.RetirarNaloja;
+import br.com.sistemapedidos.domain.entrega.EntregaPadrao;
+import br.com.sistemapedidos.domain.entrega.EntregaRapida;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +29,9 @@ public class Main {
 
         FormaPagamento pagamento = new PagamentoDebito();
         pedido.setFormaPagamento(pagamento);
+
+        FormaEntrega entrega = new EntregaRapida();
+        pedido.setFormaEntrega(entrega);
         pedido.imprime();
 
 

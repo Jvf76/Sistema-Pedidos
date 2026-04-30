@@ -1,6 +1,6 @@
 package br.com.sistemapedidos.domain.entrega;
 
 public interface FormaEntrega {
-    int entregaPadrao();
-    int entegaRapida();
+    String entrega(String entrega);
+    int calcularFrete(int frete);
 }

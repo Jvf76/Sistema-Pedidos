@@ -2,12 +2,12 @@ package br.com.sistemapedidos.domain.entrega;
 
 public class EntregaPadrao implements FormaEntrega{
     @Override
-    public int entregaPadrao() {
-        return 0;
+    public String entrega(String entrega) {
+        return "20";
     }
 
     @Override
-    public int entegaRapida() {
+    public int calcularFrete(int frete) {
         return 0;
     }
 }
