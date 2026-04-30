@@ -19,16 +19,11 @@ public class Pedido {
     }
 
     public void imprime(){
-        double desconto = formaPagamento.calculaDesconto(valorTotal);
-        double valorFinal = formaPagamento.calculaValorTotal(valorTotal);
         imprimeCliente();
         imprimeProduto();
         System.out.println("\nValor total do pedido: " + this.valorTotal);
         System.out.println("Endereço para entrega: " + cliente.getEndereco().getRua() + ", Numero: " + cliente.getEndereco().getNumero() + " Bairro: " + cliente.getEndereco().getBairro() + " CEP: " + cliente.getEndereco().getCep() );
-        if (desconto > 0) {
-            System.out.println("Desconto aplicado" + desconto);
-        }
-        System.out.println("Valor total do pedido " + valorFinal);
+        imprimePagamento();
     }
 
     public void imprimeCliente(){
@@ -41,6 +36,14 @@ public class Pedido {
         for (Produto produto : produtos){
             System.out.print(produto.getNome()+", ");
         }
+    }
+    public void imprimePagamento(){
+        double desconto = formaPagamento.calculaDesconto(valorTotal);
+        double valorFinal = formaPagamento.calculaValorTotal(valorTotal);
+        if (desconto > 0) {
+            System.out.println("Desconto aplicado" + desconto);
+        }
+        System.out.println("Valor total do pedido " + valorFinal);
     }
     public void adicionarProduto(Produto produto){
         produtos.add(produto);
