@@ -1,13 +1,13 @@
 package br.com.sistemapedidos.domain.entrega;
 
-public class EntregaRapida implements FormaEntrega{
+public class RetirarNaLoja implements FormaEntrega{
     @Override
     public String entrega() {
-        return "Entrega rápida";
+        return "Retirada na loja";
     }
 
     @Override
     public int calcularFrete() {
-        return 40;
+        return 0;
     }
 }
