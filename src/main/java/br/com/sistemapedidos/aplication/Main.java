@@ -4,6 +4,7 @@ import br.com.sistemapedidos.domain.cliente.Cliente;
 import br.com.sistemapedidos.domain.cliente.Endereco;
 import br.com.sistemapedidos.domain.pagamento.FormaPagamento;
 import br.com.sistemapedidos.domain.pagamento.PagamentoCredito;
+import br.com.sistemapedidos.domain.pagamento.PagamentoDebito;
 import br.com.sistemapedidos.domain.pagamento.PagamentoPix;
 import br.com.sistemapedidos.domain.pedido.Pedido;
 import br.com.sistemapedidos.domain.pedido.Produto;
@@ -22,7 +23,7 @@ public class Main {
         pedido.adicionarProduto(produto2);
         pedido.adicionarProduto(produto3);
 
-        FormaPagamento pagamento = new PagamentoCredito();
+        FormaPagamento pagamento = new PagamentoDebito();
         pedido.setFormaPagamento(pagamento);
         pedido.imprime();
 
