@@ -17,39 +17,26 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public void imprime(){
-        System.out.println(cliente.dadosCliente());
-        dadosProduto();
-        dadosEntrega();
-        dadosPagamento();
-    }
-
-    public void dadosPagamento(){
-        double desconto = calculaDesconto();
-        double valorFinal = valorFinal();
-        System.out.println("\nValor total do pedido: " + (this.valorTotal+formaEntrega.calcularFrete()));
-        if (desconto > 0) {
-            System.out.println("Desconto aplicado" + desconto);
-            System.out.println("Valor total do pedido com desconto: " + valorFinal);
-        }
-    }
     public double calculaDesconto(){
         double desconto = formaPagamento.calculaDesconto(valorTotal);
         return desconto;
     }
 
-    public double valorFinal(){
-        double valorFinal = formaPagamento.calculaValorTotal(valorTotal) + formaEntrega.calcularFrete();
-        return valorFinal;
+    public double calcularValorFinal(){
+       return formaPagamento.calculaValorTotal(valorTotal) + calcularFrete();
+
     }
 
-    public void dadosEntrega(){
-        String entrega = formaEntrega.entrega();
-        int frete = formaEntrega.calcularFrete();
-        System.out.println("Endereço para entrega: " + cliente.getEndereco().getRua() + ", Numero: " + cliente.getEndereco().getNumero() + " Bairro: " + cliente.getEndereco().getBairro() + " CEP: " + cliente.getEndereco().getCep() );
-        System.out.println("Forma de Entrega: " + entrega );
-        System.out.println("Valor: " + frete );
+
+    public String getTipoEntrega(){
+       return formaEntrega.entrega();
+
     }
+
+    public int calcularFrete(){
+        return formaEntrega.calcularFrete();
+    }
+
     public void dadosProduto(){
         System.out.print("Produtos do pedido: ");
         for (Produto produto : produtos){
