@@ -10,7 +10,9 @@ public class ClientePessoaFisica extends Cliente {
 
     @Override
     public String dadosCliente() {
-        return super.dadosCliente() + "\nCPF:" + this.cpf;
-
+        return "Nome: " + getNome()
+                + "\nCPF: " + this.cpf
+                + "\nEmail: " + getEmail()
+                + "\nEndereço: " + getEndereco().imprimeEndereço();
     }
 }

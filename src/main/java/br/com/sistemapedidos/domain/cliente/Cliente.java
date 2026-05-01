@@ -20,4 +20,11 @@ public class Cliente {
         return endereco;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

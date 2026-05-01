@@ -12,7 +12,10 @@ public class ClientePessoaJuridica extends Cliente{
 
     @Override
     public String dadosCliente() {
-        return super.dadosCliente();
+        return "Nome: " + getNome()
+                + "\nCPF: " + this.cnpj
+                + "\nEmail: " + getEmail()
+                + "\nEndereço: " + getEndereco().imprimeEndereço();
     }
 
     @Override
