@@ -61,6 +61,7 @@ public class Pedido {
         return cliente;
     }
 
-
-
+    public double getValorTotal() {
+        return valorTotal;
+    }
 }

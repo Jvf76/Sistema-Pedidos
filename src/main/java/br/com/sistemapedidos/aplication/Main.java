@@ -9,6 +9,7 @@ import br.com.sistemapedidos.domain.cliente.ClientePessoaJuridica;
 import br.com.sistemapedidos.domain.entrega.FormaEntrega;
 import br.com.sistemapedidos.domain.pagamento.FormaPagamento;
 import br.com.sistemapedidos.domain.pagamento.PagamentoDebito;
+import br.com.sistemapedidos.domain.pagamento.PagamentoPix;
 import br.com.sistemapedidos.domain.pedido.Pedido;
 import br.com.sistemapedidos.domain.pedido.Produto;
 import br.com.sistemapedidos.domain.entrega.EntregaRapida;
@@ -32,7 +33,7 @@ public class Main {
         pedido.adicionarProduto(produto2);
         pedido.adicionarProduto(produto3);
 
-        FormaPagamento pagamento = new PagamentoDebito();
+        FormaPagamento pagamento = new PagamentoPix();
         pedido.setFormaPagamento(pagamento);
 
         FormaEntrega entrega = new EntregaRapida();

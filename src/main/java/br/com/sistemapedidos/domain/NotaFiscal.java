@@ -17,7 +17,7 @@ public class NotaFiscal {
         System.out.println("================");
         pedido.dadosProduto();
         System.out.println("\n=================");
-        System.out.println("Valor dos produtos "+pedido.calcularValorFinal());
+        System.out.println("Valor dos produtos "+pedido.getValorTotal());
         System.out.println("Desconto aplicado: "+pedido.calculaDesconto());
         System.out.println("Valor total: " + pedido.calcularValorFinal());
 
