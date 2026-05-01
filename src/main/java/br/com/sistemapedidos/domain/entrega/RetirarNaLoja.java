@@ -7,7 +7,7 @@ public class RetirarNaLoja implements FormaEntrega{
     }
 
     @Override
-    public int calcularFrete() {
+    public double calcularFrete() {
         return 0;
     }
 }

@@ -9,6 +9,7 @@ public class PagamentoPix implements FormaPagamento {
 
     @Override
     public double calculaDesconto(double valorTotal) {
+        System.out.println("Forma de pagamento: PIX");
         double desconto = valorTotal * 0.15;
         return desconto;
     }

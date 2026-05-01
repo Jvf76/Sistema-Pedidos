@@ -33,7 +33,7 @@ public class Pedido {
 
     }
 
-    public int calcularFrete(){
+    public doublece calcularFrete(){
         return formaEntrega.calcularFrete();
     }
 
@@ -51,6 +51,10 @@ public class Pedido {
 
     public void setFormaPagamento(FormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
+    }
+
+    public FormaPagamento getFormaPagamento() {
+        return formaPagamento;
     }
 
     public void setFormaEntrega(FormaEntrega formaEntrega) {

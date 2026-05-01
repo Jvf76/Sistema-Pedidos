@@ -7,7 +7,7 @@ public class EntregaRapida implements FormaEntrega{
     }
 
     @Override
-    public int calcularFrete() {
-        return 40;
+    public double calcularFrete() {
+        return 40.00;
     }
 }

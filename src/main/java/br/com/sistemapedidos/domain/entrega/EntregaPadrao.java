@@ -7,7 +7,7 @@ public class EntregaPadrao implements FormaEntrega{
     }
 
     @Override
-    public int calcularFrete() {
-        return 20;
+    public double calcularFrete() {
+        return 20.00;
     }
 }
