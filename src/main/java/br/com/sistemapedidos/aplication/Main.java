@@ -1,5 +1,6 @@
 package br.com.sistemapedidos.aplication;
 
+import br.com.sistemapedidos.domain.NotaFiscal;
 import br.com.sistemapedidos.domain.cliente.Cliente;
 import br.com.sistemapedidos.domain.cliente.Endereco;
 import br.com.sistemapedidos.domain.entrega.FormaEntrega;
@@ -14,6 +15,7 @@ public class Main {
         Endereco endereco = new Endereco("av getulio vargas",222, "38700233","centro");
         Cliente cliente = new Cliente("joao","77777777", "joao@gmail.com", endereco);
         Pedido pedido = new Pedido(cliente);
+        NotaFiscal notaFiscal = new NotaFiscal(pedido);
 
         Produto produto1 = new Produto(1, "celular", 2000);
         Produto produto2 = new Produto (2,"mouse", 200);
@@ -28,8 +30,9 @@ public class Main {
 
         FormaEntrega entrega = new EntregaRapida();
         pedido.setFormaEntrega(entrega);
-        pedido.imprime();
 
+
+        notaFiscal.imprimeNotaFiscal();
 
     }
 }

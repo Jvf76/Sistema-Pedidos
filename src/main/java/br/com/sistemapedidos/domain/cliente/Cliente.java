@@ -13,40 +13,15 @@ public class Cliente {
         this.email = email;
         this.endereco = endereco;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNome(){
-        return nome;
-    }
-
-    public void setCpf(String cpf){
-        this.cpf = cpf;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getCnpj() {
-        return cnpj;
+    public String dadosCliente(){
+        return "Nome: " + this.nome
+                + "\nCpf: "+this.cpf
+                + "\nEMAIIL: "+this.email
+                + "\nEndereço: "+ getEndereco().imprimeEndereço();
     }
 
     public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 }

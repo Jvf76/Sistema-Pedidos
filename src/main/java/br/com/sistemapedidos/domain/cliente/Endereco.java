@@ -13,6 +13,13 @@ public class Endereco {
         this.cep = cep;
         this.bairro = bairro;
     }
+    public String imprimeEndereço(){
+        return "Rua: " + rua
+                + "\nNumero: "+ numero
+                + "\nCEP: " + cep
+                + "\nBairro: "+ bairro;
+    }
+
     public String getRua() {
         return rua;
     }
