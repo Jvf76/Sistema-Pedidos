@@ -49,10 +49,6 @@ public class Pedido {
         valorTotal += produto.getPreco();
     }
 
-    public ArrayList<Produto> getProdutos() {
-        return produtos;
-    }
-
     public void setFormaPagamento(FormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
@@ -61,19 +57,10 @@ public class Pedido {
         this.formaEntrega = formaEntrega;
     }
 
-    public FormaEntrega getFormaEntrega() {
-        return formaEntrega;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
+
 }

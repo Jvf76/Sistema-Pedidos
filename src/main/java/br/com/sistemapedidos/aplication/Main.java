@@ -3,6 +3,8 @@ package br.com.sistemapedidos.aplication;
 import br.com.sistemapedidos.domain.NotaFiscal;
 import br.com.sistemapedidos.domain.cliente.Cliente;
 import br.com.sistemapedidos.domain.cliente.Endereco;
+import br.com.sistemapedidos.domain.cliente.ClientePessoaFisica;
+import br.com.sistemapedidos.domain.cliente.ClientePessoaJuridica;
 import br.com.sistemapedidos.domain.entrega.FormaEntrega;
 import br.com.sistemapedidos.domain.pagamento.FormaPagamento;
 import br.com.sistemapedidos.domain.pagamento.PagamentoDebito;
@@ -13,7 +15,8 @@ import br.com.sistemapedidos.domain.entrega.EntregaRapida;
 public class Main {
     public static void main(String[] args) {
         Endereco endereco = new Endereco("av getulio vargas",222, "38700233","centro");
-        Cliente cliente = new Cliente("joao","77777777", "joao@gmail.com", endereco);
+        Cliente cliente = new ClientePessoaFisica("joao", "998989898988","joao@gmail.com", endereco);
+        Cliente cliente2 = new ClientePessoaJuridica("jose", "9797666555","josee@gmail.com", endereco);
         Pedido pedido = new Pedido(cliente);
         NotaFiscal notaFiscal = new NotaFiscal(pedido);
 
