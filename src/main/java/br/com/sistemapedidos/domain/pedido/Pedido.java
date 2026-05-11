@@ -18,6 +18,9 @@ public class Pedido {
     }
 
     public double calculaDesconto(){
+        if (formaPagamento == null){
+            throw new IllegalStateException("Forma de pagamento não foi definida.");
+        }
         double desconto = formaPagamento.calculaDesconto(valorTotal);
         return desconto;
     }
@@ -29,11 +32,14 @@ public class Pedido {
 
 
     public String getTipoEntrega(){
+        if (formaEntrega == null){
+            throw new IllegalStateException("Forma de entrega não foi definida");
+        }
        return formaEntrega.entrega();
 
     }
 
-    public doublece calcularFrete(){
+    public double calcularFrete(){
         return formaEntrega.calcularFrete();
     }
 
